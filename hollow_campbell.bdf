@@ -1,0 +1,64 @@
+ASSIGN OUTPUT4='CAMPBELL_FREQ.op4', UNIT=71, FORM=FORMATTED,DELETE
+ASSIGN OUTPUT4='CAMPBELL_RPM.op4', UNIT=72, FORM=FORMATTED,DELETE
+$
+SOL 107
+CEND
+$
+$TITLE = MODEL
+ECHO = NONE
+SUBCASE 1
+   SUBTITLE = DEFAULT
+   CMETHOD = 1
+   SPC = 2
+   RGYRO = 1
+   CAMPBELL = 100
+$   VECTOR(SORT1,REAL) = ALL
+$   SPCFORCES(SORT1,REAL) = ALL
+$
+BEGIN BULK
+$
+PARAM,POST,-1
+PARAM,COUPMASS,1
+PARAM,PRTMAXIM,YES
+$
+CAMPBLL 100     SPEED      11      RPM
+$       2       3       4       5       6       7       8       9       10
+$2345678123456781234567812345678123456781234567812345678123456781234567812345678
+$DDVAL  ID      DVAL1   DVAL2   DVAL3   DVAL4   DVAL5   DVAL6   DVAL7
+$       DVAL8   -etc.-
+DDVAL     11     10000.    THRU    0.0     BY    -1000.
+$
+EIGC      1      CLAN      MAX
+          0.     0.                                             12
+$
+ROTORG    2      1
+ROTORG    2      2
+ROTORG    2      3
+ROTORG    2      4
+ROTORG    2      5
+ROTORG    2      6
+$
+RSPINR    2      2        3         RPM      1.
+RGYRO     1      ASYNC    2         RPM                        10000.
+$
+PBEAML    1      1                 TUBE
+          .1     .05
+MAT1     1       2.1E11          0.3     7810.
+$
+CBEAM    1       1       1       2       0.      1.      0.
+CBEAM    2       1       2       3       0.      1.      0.
+CBEAM    3       1       3       4       0.      1.      0.
+CBEAM    4       1       4       5       0.      1.      0.
+CBEAM    5       1       5       6       0.      1.      0.
+$
+GRID     1               0.      0.      0.
+GRID     2               .1      0.      0.
+GRID     3               .2      0.      0.
+GRID     4               .3      0.      0.
+GRID     5               .4      0.      0.
+GRID     6               .5      0.      0.
+$
+SPCADD   2       1
+SPC1     1       123456   1
+$
+ENDDATA
