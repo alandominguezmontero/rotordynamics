@@ -1,0 +1,23 @@
+Disclaimer
+
+Please use this package for educational purposes only, I do not support industries (without pay) and do not support ministries of ‘energy’ anywhere.
+ Students are welcome to ask questions and I will do my best to help beginners researching rotordynamics. 
+ Please do not send long assignments to me because this would mean I will have less time to ride my mountain bike. 
+ This software package was written mostly during the summers of 1995,1998 (and some bugs are 10 years old :-)
+   Do not despair! Some parts work correctly and the graphics is reasonably nice. I use the package myself during teaching (rotordynamics). 
+  
+   More seriously, I get occasional requests to send this package to people worldwide therefore I have decided to put it back onto the Mathworks users’ area.
+
+ It would be nice to be acknowledged (even by an email) when you create nice graphics/results/publication etc. with this package. 
+
+Instructions:
+1)	 Unpack the package, maintain directory structure
+2)	cd to   /Rotfe25x in Matlab
+3)	type rotfeini (in Matlab) to add all the underneath directory to the path
+4)	run the demo (slow) by typing demo_rotfe
+5)	run the torsional vibration demo (somewhat incomplete, sorry) - tst_rotany.m
+6)	edit an example model, e.g.   simple4s.m, run it using :
+a.	modeplot2 simple4s  (use buttons to compute and manipulate display)
+b.	compute and display the Cambell diagram (http://en.wikipedia.org/wiki/Campbell_diagram) via,  campbell simple4s, zoom with the mouse to see the lower frequency range
+  Good luck and enjoy
+				Izhak Bucher,  http://dynamics.technion.ac.il 
